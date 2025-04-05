@@ -22,16 +22,19 @@ def count_characters(book_text):
     return counter
 
 def print_report(book_words_count, book_characters_counter, book_path):
-    print(f"--- Begin report of {book_path} ---")
-    print(f"{book_words_count} words found in the document\n\n")
+    print(f"============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {book_words_count} total words")
+    print("--------- Character Count -------")
 
     list_of_dictionaries = convert_dict_to_sorted_list_of_dicts(book_characters_counter)
 
     for dict in list_of_dictionaries:
         key = list(dict.keys())[0]
-        print(f"The '{key}' character was found {dict[key]} times")
+        print(f"'{key}': {dict[key]}")
 
-    print("--- End report ---")
+    print("============= END ===============")
 
 def convert_dict_to_sorted_list_of_dicts(book_characters_counter):
     list_of_dictionaries = []
